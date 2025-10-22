@@ -1,0 +1,52 @@
+kafka vecchio:
+https://www.youtube.com/watch?v=9o6wxgmRNKM&t=999s
+
+installazione kafka 4: https://www.youtube.com/watch?v=lO7OMXPldnk
+
+sito kafka:
+https://kafka.apache.org/
+
+Per configurare:
+1 -
+set KAFKA_CLUSTER_ID=(.\bin\windows\kafka-storage.bat random-uuid)
+oppure
+set KAFKA_CLUSTER_ID="jacopo-kafka4"
+2 -
+.\bin\windows\kafka-storage.bat format --standalone -t jacopo-kafka4 -c  .\config\server.properties
+3 -
+cancellare e inserire nel punto indicato, tutta la IF ["%KAFKA_HEAP_OPTS%"] EQU [""],  questa riga di comando nel file kafka-server-start.bat
+
+-->
+IF ["%KAFKA_HEAP_OPTS%"] EQU [""] (
+	set KAFKA_HEAP_OPTS=-Xmx1G -Xms1G
+)
+<--
+
+4 - impostare la memoria heap manualmente:
+setx KAFKA_HEAP_OPTS "-Xmx1G -Xms1G"
+5 - lanciare il comando dalla cartella C:\kafka
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+PER LANCIARE IL SERVER:
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+PER STOPPARE:
+premere ctrl C
+
+
+ELENCARE I TOPIC ATTIVI SUL SERVER
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+CREARE UN TOPIC SUL SERVER di nome "new-orders"
+.\bin\windows\kafka-topics.bat --create --topic new-orders --bootstrap-server localhost:9092
+
+CANCELLARE UN TOPIC
+.\bin\windows\kafka-topics.bat --delete --topic new-orders --bootstrap-server localhost:9092
+
+CANCELLARE TUTTI I TOPIC
+./bin/kafka-topics.bat --bootstrap-server localhost:9092 --delete --topic '.*'
+
+CREARE UN CONSUMER IN ASCOLTO SUL TOPIC "new-orders"
+.\bin\windows\kafka-console-consumer.bat --topic new-orders --bootstrap-server localhost:9092
+
+LANCIARE UN CONSUMER IN ASCOLTO SU UN TOPIC
+.\bin\windows\kafka-console-consumer.bat --topic new-orders --from-beginning --bootstrap-server localhost:9092

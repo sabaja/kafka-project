@@ -1,0 +1,36 @@
+kafka vecchio:
+https://www.youtube.com/watch?v=9o6wxgmRNKM&t=999s
+
+installazione kafka 4: https://www.youtube.com/watch?v=lO7OMXPldnk
+
+sito kafka:
+https://kafka.apache.org/
+
+Per configurare:
+
+comandi eseguiti dalla directory ~/kafka
+./bin/kafka-server-start.sh ./config/server.properties
+
+PER LANCIARE IL SERVER:
+./bin/kafka-server-start.sh ./config/server.properties
+PER STOPPARE:
+premere ctrl C
+
+
+ELENCARE I TOPIC ATTIVI SUL SERVER
+./bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+CREARE UN TOPIC SUL SERVER di nome "new-orders"
+./bin/kafka-topics.sh --create --topic new-orders --bootstrap-server localhost:9092
+
+CANCELLARE UN TOPIC
+./bin/kafka-topics.sh --delete --topic new-orders --bootstrap-server localhost:9092
+
+CANCELLARE TUTTI I TOPIC
+./bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic '.*'
+
+CREARE UN CONSUMER IN ASCOLTO SUL TOPIC "new-orders"
+./bin/kafka-console-consumer.sh --topic new-orders --bootstrap-server localhost:9092
+
+LANCIARE UN CONSUMER IN ASCOLTO SU UN TOPIC
+./bin/kafka-console-consumer.sh --topic new-orders --from-beginning --bootstrap-server localhost:9092

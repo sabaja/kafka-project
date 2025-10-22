@@ -28,7 +28,6 @@
 	</scm>
 	<properties>
 		<java.version>25</java.version>
-        <jackson.version>2.20.0</jackson.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -61,23 +60,6 @@
 			<artifactId>spring-kafka-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>it.js</groupId>
-            <artifactId>kafka-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
 	</dependencies>
 
 	<build>

@@ -1,4 +1,4 @@
-package it.js.spring_kafka_consumer.config;
+package it.js.springkafkaconsumer.config;
 
 import it.js.commons.dto.NewOrder;
 import org.apache.kafka.clients.consumer.ConsumerConfig;

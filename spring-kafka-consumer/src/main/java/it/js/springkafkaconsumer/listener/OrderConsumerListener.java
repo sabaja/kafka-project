@@ -1,4 +1,4 @@
-package it.js.spring_kafka_consumer.listener;
+package it.js.springkafkaconsumer.listener;
 
 import it.js.commons.dto.NewOrder;
 import lombok.extern.slf4j.Slf4j;

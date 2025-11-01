@@ -1,4 +1,4 @@
-package it.js.spring_kafka_producer.service;
+package it.js.springkafkaproducer.service;
 
 import it.js.commons.dto.NewOrder;
 import lombok.extern.slf4j.Slf4j;

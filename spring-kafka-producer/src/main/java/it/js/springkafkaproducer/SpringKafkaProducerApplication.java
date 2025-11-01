@@ -1,7 +1,7 @@
-package it.js.spring_kafka_producer;
+package it.js.springkafkaproducer;
 
 import it.js.commons.dto.NewOrder;
-import it.js.spring_kafka_producer.service.KafkaProducer;
+import it.js.springkafkaproducer.service.KafkaProducer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

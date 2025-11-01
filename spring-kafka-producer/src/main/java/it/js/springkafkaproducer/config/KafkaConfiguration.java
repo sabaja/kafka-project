@@ -1,4 +1,4 @@
-package it.js.spring_kafka_producer.config;
+package it.js.springkafkaproducer.config;
 
 import it.js.commons.dto.NewOrder;
 import org.apache.kafka.clients.producer.ProducerConfig;
